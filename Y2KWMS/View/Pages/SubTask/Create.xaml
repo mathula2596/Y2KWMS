@@ -1,0 +1,189 @@
+﻿<Page x:Class="Y2KWMS.View.Pages.SubTask.Create"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Y2KWMS.View.Pages.SubTask"
+      mc:Ignorable="d" Width="900"
+       d:DesignHeight="600" d:DesignWidth="900"
+      Title="Create" Style="{DynamicResource pageStyle}">
+
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}" Padding="10">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,0,-106,0" HorizontalAlignment="Center" >
+                <TextBlock Text="Create New Sub Task" Name="txtblockTitle" Style="{DynamicResource HeadingStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="ID : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <TextBox x:Name="txtId" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Title : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <TextBox x:Name="txtTitle" Width="200" IsReadOnly="False" TextWrapping="Wrap" AcceptsReturn="True" SpellCheck.IsEnabled="True" Height="80"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="4" Grid.RowSpan="2" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Description : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <TextBox x:Name="txtDescription" Width="200" IsReadOnly="False" TextWrapping="Wrap" AcceptsReturn="True" SpellCheck.IsEnabled="True" Height="80"/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Column="0" Grid.Row="6" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Duration (Days) : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <TextBox x:Name="txtDuration" Width="200" InputScope="Number" KeyUp="txtDuration_KeyUp" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="7" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Project : " Style="{DynamicResource LabelStyle}" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="7"  Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}" >
+                <Border Name="cmbProjectBorder"  BorderThickness="0">
+
+                    <ComboBox x:Name="cmbProject" Width="200" IsTextSearchEnabled="True" 
+                  StaysOpenOnEdit="True" SelectionChanged="cmbProject_SelectionChanged">
+                        <ComboBoxItem IsSelected="True">Select Project</ComboBoxItem>
+                    </ComboBox>
+                </Border>
+
+
+
+            </StackPanel>
+
+
+
+
+            <StackPanel Grid.Column="0" Grid.Row="8" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Task : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="8" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <Border Name="cmbTaskBorder"  BorderThickness="0">
+
+                    <ComboBox x:Name="cmbTask" Width="200" SelectionChanged="cmbTask_SelectionChanged">
+                        <ComboBoxItem IsSelected="True">Select Task</ComboBoxItem>
+                    </ComboBox>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Create Date : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <DatePicker x:Name="dpCreateDate" Width="200" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Start Date : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Grid.Row="2" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <DatePicker x:Name="dpStartDate" Width="200" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Grid.Row="3" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Expected End Date : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <DatePicker Name="dpExpectedEndDate" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Grid.Row="4" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="End Date : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Grid.Row="4" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <DatePicker Name="dpEndDate" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Grid.Row="5" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Precentage Completed : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Grid.Row="5" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <TextBox x:Name="txtPercentageComplete" Width="200" InputScope="Number" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Grid.Row="6" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Allocated Users : " Style="{DynamicResource LabelStyle}" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Grid.Row="6"  Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}" >
+                <Border Name="cmbTeamMemberBorder"  BorderThickness="0">
+
+                    <ComboBox x:Name="cmbTeamMember" Width="200" IsTextSearchEnabled="True" 
+                  StaysOpenOnEdit="True">
+                        <ComboBoxItem IsSelected="True">Select User</ComboBoxItem>
+                    </ComboBox>
+                </Border>
+
+
+
+            </StackPanel>
+            
+
+            <StackPanel Grid.Column="2" Grid.Row="7" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Status : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Grid.Row="7" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <Border Name="cmbStatusBorder"  BorderThickness="0">
+
+                    <ComboBox x:Name="cmbStatus" Width="200">
+                        <ComboBoxItem IsSelected="True">Select Status</ComboBoxItem>
+                    </ComboBox>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="5" Margin="0,0,-106,0" HorizontalAlignment="Center">
+                <Button x:Name="btnSave" Content="Save" Style="{DynamicResource PrimaryButtonStyle}" Click="btnSave_Click"/>
+                <Button x:Name="btnClear" Content="Clear" Style="{DynamicResource ClearButtonStyle}" Click="btnClear_Click"/>
+
+            </StackPanel>
+
+
+
+
+        </Grid>
+    </Border>
+</Page>

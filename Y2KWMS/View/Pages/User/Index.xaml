@@ -1,0 +1,100 @@
+﻿<Page x:Class="Y2KWMS.View.Pages.Project.User.Index"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Y2KWMS.View.Pages.Project.User"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1100"
+      Title="Index" Style="{DynamicResource pageStyle}">
+
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}" Padding="10">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
+                <TextBlock Text="View User Details" Style="{DynamicResource HeadingStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Search By : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <ComboBox x:Name="cmbSearchBy" Width="200">
+                    
+                </ComboBox>
+
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" Style="{DynamicResource LabelStackPanelStyle}">
+                <TextBlock Text="Search : " Style="{DynamicResource LabelStyle}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+                <TextBox x:Name="txtSearch" Width="200" IsReadOnly="False" KeyUp="txtSearch_KeyUp"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Orientation="Horizontal" Style="{DynamicResource FieldStackPanelStyle}">
+
+                <DataGrid x:Name="dgListDetails" Width="1080" Style="{DynamicResource dataGridStyle}" ItemsSource="{Binding}" AutoGenerateColumns="False"  AlternatingRowBackground="{DynamicResource PrimaryGrayColor}" AlternationCount="2" IsReadOnly="True" >
+
+                    <DataGrid.Columns >
+
+                        <DataGridTextColumn Header="ID"  Binding="{Binding Id}" HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="*"/>
+
+                        <DataGridTextColumn Header="First Name"  Binding="{Binding Firstname}" HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="2*"/>
+
+                        <DataGridTextColumn Header="Last Name" Binding="{Binding Lastname}" HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="2*" />
+
+                        <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"  HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="2*" />
+
+                        <DataGridTextColumn Header="Address" Binding="{Binding Address}" HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="2*"  />
+
+                        <DataGridTextColumn Header="Email" Binding="{Binding Email}" HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="3*" />
+
+                        <DataGridTextColumn Header="Branch" Binding="{Binding Branch}" HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="2*" />
+
+                        <DataGridTextColumn Header="User Type" Binding="{Binding Type}" HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="2*" />
+
+                        <DataGridTextColumn Header="Status"  Binding="{Binding Status}" HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="*" />
+
+                        <DataGridTemplateColumn x:Name="editColumn" Header="Edit" HeaderStyle="{DynamicResource dataGridColumnHeaderStyle}" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="btnEdit"  Tag="{StaticResource edit}"  Style="{DynamicResource EditButtonStyle}" Click="btnEdit_Click" Uid="1" CommandParameter="{Binding Id}">
+                                        <Path Data="{DynamicResource edit}" Fill="White"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+
+
+
+
+
+
+        </Grid>
+    </Border>
+</Page>
+    
+

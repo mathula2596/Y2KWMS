@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Y2KWMS", "Y2KWMS.csproj", "{1F75C509-CF8B-4D8D-B706-FA362AA7DE22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingY2KWorkManagementSystem", "..\TestingY2KWorkManagementSystem\TestingY2KWorkManagementSystem.csproj", "{B89C7311-4125-480C-91D0-5827DCBE7E37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F75C509-CF8B-4D8D-B706-FA362AA7DE22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F75C509-CF8B-4D8D-B706-FA362AA7DE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F75C509-CF8B-4D8D-B706-FA362AA7DE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F75C509-CF8B-4D8D-B706-FA362AA7DE22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89C7311-4125-480C-91D0-5827DCBE7E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89C7311-4125-480C-91D0-5827DCBE7E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89C7311-4125-480C-91D0-5827DCBE7E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89C7311-4125-480C-91D0-5827DCBE7E37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38EBA04E-7D84-4E84-A9E4-2F0B6444B3F5}
+	EndGlobalSection
+EndGlobal

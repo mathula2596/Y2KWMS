@@ -1,0 +1,17 @@
+﻿<Application x:Class="Y2KWMS.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Y2KWMS"
+             StartupUri="View/Login.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="View/Themes/LightTheme.xaml"/>
+                <ResourceDictionary Source="View/Styles/StyleSheet.xaml"/>
+                <ResourceDictionary Source="View/Assets/Icons/IconsList.xaml"/>
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
